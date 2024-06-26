@@ -19,7 +19,7 @@ while url:
     quotes = soup.find_all(class_="quote")
  
     for quote in quotes:
-        all_quotes.append({
+        quotes_list.append({
             "text": quote.find(class_="text").get_text(),
             "author": quote.find(class_="author").get_text(),
             "bio-link": quote.find("a")["href"]
@@ -28,7 +28,7 @@ while url:
     url = next_btn.find("a")["href"] if next_btn else None
     sleep(2)
  
-quote = choice(all_quotes)
+quote = choice(quotes_list)
 remaining_guesses = 4
 print("Here's a quote:  ")
 print(quote["text"])
@@ -44,7 +44,7 @@ while guess.lower() != quote["author"].lower() and remaining_guesses > 0:
     remaining_guesses -= 1
      
     if remaining_guesses == 3:
-        res = requests.get(f"{base_url}{quote['bio-link']}")
+        res = requests.get(f"{normal_url}{quote['bio-link']}")
         soup = BeautifulSoup(res.text, "html.parser")
         birth_date = soup.find(class_="author-born-date").get_text()
         birth_place = soup.find(class_="author-born-location").get_text()

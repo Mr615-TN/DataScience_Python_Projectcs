@@ -1,0 +1,64 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite database files (if using SQLite)
+*.db
+*.sqlite3
+
+# CSV files (if you don't want to version control them)
+data/*.csv
+
+# PostgreSQL specific files
+pgdata/
+*.pgdata
+*.sql
+*.dump
+
+# Environment files
+.env
+*.env
+
+# Python virtual environment
+venv/
+env/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+*.cover
+*.py,cover
+*.un~
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+
+# PyCharm project files (if using PyCharm)
+.idea/
+
+# VSCode project files (if using VSCode)
+.vscode/
+
+# Ignore macOS specific files
+.DS_Store
+

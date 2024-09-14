@@ -34,3 +34,20 @@ class StoryGenerator:
             "Investigate an ancient ruin near a village of humans that has been taken over by dark elves"
         ]
         return random.choice(quests)
+    
+class CombatSystem:
+    def __init__(self):
+        self.initiativeOrder = []
+    
+    def roll_order(self, characters: List[Character]):
+        self.initiativeOrder = [(char, random.randint(1,20)) for char in characters]
+        self.initiativeOrder.sort(key=lambda x: x[1], reverse=True)
+    
+    def process_combat_round(self):
+        for character, _ in self.initiativeOrder:
+            print(f"{character.name}'s turn ...")
+    
+
+class DungeonMaster:
+    def __init__(self) -> None:
+        pass

@@ -49,5 +49,24 @@ class CombatSystem:
     
 
 class DungeonMaster:
-    def __init__(self) -> None:
-        pass
+    def __init__(self):
+        self.storygen = StoryGenerator()
+        self.combat_sys = CombatSystem()
+        self.current_loc = None
+        self.characters = []
+
+    def startGame(self):
+        print("Welcome to the AI D&D Game!")
+        self.create_characters()
+        self.generate_start_loc()
+        self.main_gameLoop()
+    
+    def create_characters(self):
+        num_players = int(input("How many people are playing?"))
+        for i in range(num_players):
+            name = input(f"Enter name for character {i+1}: ")
+            class_character = input(f"Enter class for {name}: ")
+            self.characters.append(Character(name, class_character, 1))
+    
+    
+        

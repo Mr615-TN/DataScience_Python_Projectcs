@@ -79,7 +79,7 @@ class DungeonMaster:
                 break
             elif action == "look around":
                 self.talk_npc()
-            elif action == "fight"
+            elif action == "fight":
                 self.initiateFight()
             else:
                 print("I dont understand the action")
@@ -104,7 +104,7 @@ class DungeonMaster:
             print(f"{character.name}: {initiative}")
         self.combat_sys.process_combat_round()
 
-__name__ == "__main__":
+if __name__ == "__main__":
     dm = DungeonMaster()
     dm.startGame()
 
